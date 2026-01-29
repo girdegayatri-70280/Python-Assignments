@@ -1,0 +1,15 @@
+name = input("Enter Vendor Name: ")
+year = input("Enter Year of Association: ")
+phone = input("Enter Contact Number: ")
+email = input("Enter Email ID: ")
+monthly_bills = []
+print(f"\nEnter monthly purchase amounts for {name}:")
+for i in range(1, 5):
+    bill = float(input(f"Month {i}: "))
+    monthly_bills.append(bill)
+total_annual = sum(monthly_bills)
+print("\nANNUAL INCOME:\n")
+print(f"Vendor: {name} (Since {year})")
+print(f"Contact: {phone} | Email: {email}")
+print(f"Total Annual Purchase: {total_annual}")
+print(f"Monthly Average: {total_annual / 12}")
