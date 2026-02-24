@@ -1,5 +1,6 @@
 n = int(input("Enter number of items sold: "))
 prices = tuple(int(input()) for _ in range(n))
+
 print("Total items sold:", len(prices))
 print("Cheapest item price:", min(prices))
 print("Costliest item price:", max(prices))
