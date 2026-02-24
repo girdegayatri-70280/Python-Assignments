@@ -1,0 +1,11 @@
+n = int(input("Enter number of elements: "))
+t = tuple(int(input()) for _ in range(n))
+print("Total items:", len(t))
+print("Last item:", t[-1])
+print("Reversed tuple:", t[::-1])
+print("Yes" if 5 in t else "No")
+if len(t) > 2:
+    new_t = t[1:-1]
+else:
+    new_t = ()
+print("After removing first and last:", new_t)
