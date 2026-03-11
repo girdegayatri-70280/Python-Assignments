@@ -1,0 +1,26 @@
+source = input("Enter source file name: ")
+dest = input("Enter destination file name: ")
+
+f = open(source, "r")
+lines = f.readlines()
+f.close()
+
+new_lines = []
+for line in lines:
+    s = line.strip()
+    if not s.startswith("#") and s != "":
+        new_lines.append(line)
+
+f = open(dest, "w")
+f.writelines(new_lines)
+f.close()
+
+print("Source File Content:")
+f = open(source, "r")
+print(f.read())
+f.close()
+
+print("Destination File Content:")
+f = open(dest, "r")
+print(f.read())
+f.close()
