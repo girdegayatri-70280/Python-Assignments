@@ -1,0 +1,16 @@
+import pandas as pd
+
+df = pd.read_csv("books.csv")
+
+print(df)
+
+author = input("Enter author name: ")
+print(df[df['author'] == author])
+
+house = input("Enter publishing house: ")
+print(df[df['publishing_house'] == house])
+
+print("Cheapest book:", df.loc[df['price'].idxmin(), 'title'])
+print("Costliest book:", df.loc[df['price'].idxmax(), 'title'])
+
+print(df.sort_values(by='publication_year'))
