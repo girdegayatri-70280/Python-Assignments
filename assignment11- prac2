@@ -1,0 +1,21 @@
+import pandas as pd
+import matplotlib.pyplot as plt
+
+df = pd.read_csv("recruitments.csv")
+
+plt.bar(df['company'], df['recruits'])
+plt.show()
+
+plt.pie(df['recruits'], labels=df['company'], autopct='%1.1f%%')
+plt.show()
+
+plt.pie(df['recruits'], labels=df['company'], autopct='%1.1f%%', startangle=90, shadow=True)
+plt.show()
+
+plt.pie(df['recruits'], labels=df['company'], wedgeprops={'width':0.4})
+plt.show()
+
+ibm = df[df['company']=='IBM']['recruits'].values[0]
+amdocs = df[df['company']=='Amdocs']['recruits'].values[0]
+plt.bar(['IBM','Amdocs'], [ibm, amdocs])
+plt.show()
