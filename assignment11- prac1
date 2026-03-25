@@ -1,0 +1,24 @@
+import pandas as pd
+import matplotlib.pyplot as plt
+
+df = pd.read_csv("sales.csv")
+
+plt.plot(df['month'], df['total_profit'])
+plt.show()
+
+plt.plot(df['month'], df['facecream'], label='Face Cream')
+plt.plot(df['month'], df['facewash'], label='Face Wash')
+plt.plot(df['month'], df['toothpaste'], label='Toothpaste')
+plt.plot(df['month'], df['shampoo'], label='Shampoo')
+plt.plot(df['month'], df['moisturizer'], label='Moisturizer')
+plt.legend()
+plt.show()
+
+plt.bar(df['month'], df['facecream'], label='Face Cream')
+plt.bar(df['month'], df['facewash'], bottom=df['facecream'], label='Face Wash')
+plt.legend()
+plt.show()
+
+totals = df[['facecream','facewash','toothpaste','shampoo','moisturizer']].sum()
+plt.pie(totals, labels=totals.index, autopct='%1.1f%%')
+plt.show()
