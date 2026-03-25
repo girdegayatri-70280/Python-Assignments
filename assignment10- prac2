@@ -1,0 +1,19 @@
+import pandas as pd
+
+data = {
+    'state': ['Maharashtra', 'Gujarat', 'Kerala', 'Punjab', 'Rajasthan'],
+    'area': [307713, 196024, 38863, 50362, 342239],
+    'population': [123000000, 70000000, 35000000, 30000000, 78000000]
+}
+
+df = pd.DataFrame(data)
+
+print(df)
+
+print("Largest Area:", df.loc[df['area'].idxmax(), 'state'])
+print("Largest Population:", df.loc[df['population'].idxmax(), 'state'])
+
+df['density'] = df['population'] / df['area']
+print(df)
+
+print("Highest Density:", df.loc[df['density'].idxmax(), 'state'])
